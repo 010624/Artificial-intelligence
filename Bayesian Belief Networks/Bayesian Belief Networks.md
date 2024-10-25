@@ -56,3 +56,6 @@ Using the structure and the CPTs, we can apply Bayesian inference to calculate:
 
 P(D=True | C=True, F=True)
 Using Bayes' theorem and the chain rule of probability, we can compute this probability by summing over the joint probabilities of the symptoms given the possible states of the disease and flu.
+
+
+![3f0daae9-ed03-4f51-85f3-cf13e7af4899](https://github.com/user-attachments/assets/37672bad-55a4-4552-bb05-dd4820d4f8a4)
