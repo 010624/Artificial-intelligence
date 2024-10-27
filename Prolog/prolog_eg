@@ -1,24 +1,19 @@
-Prolog always performs depth-first-search, Matches facts & rules (i.e. knowledge base) in top-down
-manner and resolves the goals or subgoals in left-to-right manner. Most important thing to keep in mind
-while writing prolog program - "order of writing facts & rules always matters".
+%facts about student and teacher
 
-//facts
-
-studies(charlie, csc135). 
+studies(charlie, csc135).   % Charilie studies csc135
 studies(olivia, csc135). 
 studies(jack, csc131). 
 studies(arthur, csc134). 
 
-teaches(kirke, csc135). 
+teaches(kirke, csc135). 	% Kirke teaches csc135
 teaches(collins, csc131). 
 teaches(collins, csc171).
 teaches(juniper, csc134). 
 
-//rules
+% rules for professor relationship
 professor(X, Y) :- teaches(X, C), studies(Y, C).
 
-//Quries
+%Quries
 ?- studies(charlie, What).
-
 ?- professor(kirke, Students).
 
