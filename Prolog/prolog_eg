@@ -1,4 +1,4 @@
-%facts about student and teacher
+% Facts about student and teacher
 
 studies(charlie, csc135).   % Charilie studies csc135
 studies(olivia, csc135). 
@@ -10,10 +10,11 @@ teaches(collins, csc131).
 teaches(collins, csc171).
 teaches(juniper, csc134). 
 
-% rules for professor relationship
+% Rules for professor relationship
 professor(X, Y) :- teaches(X, C), studies(Y, C).
 
-%Quries
+% Quries
+
 ?- studies(charlie, What).
 ?- professor(kirke, Students).
 
