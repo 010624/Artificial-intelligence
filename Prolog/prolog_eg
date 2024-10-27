@@ -17,4 +17,3 @@ professor(X, Y) :- teaches(X, C), studies(Y, C).
 
 ?- studies(charlie, What).
 ?- professor(kirke, Students).
-
