@@ -1,18 +1,33 @@
-% Facts about student and teacher
-studies(charlie, csc135).   % Charilie studies csc135
-studies(olivia, csc135). 
-studies(jack, csc131). 
-studies(arthur, csc134). 
+% Facts
+student(john).
+student(mary).
+student(alice).
 
-teaches(kirke, csc135). 	% Kirke teaches csc135
-teaches(collins, csc131). 
-teaches(collins, csc171).
-teaches(juniper, csc134). 
+professor(smith).
+professor(jones).
+professor(brown).
 
-% Rules for professor relationship
-professor(X, Y) :- teaches(X, C), studies(Y, C).
+teaches(smith, math).
+teaches(smith, physics).
+teaches(jones, chemistry).
+teaches(brown, computer_science).
+teaches(brown, data_science).
 
-% Quries
+% Rules
+% A student is taught by a professor if that professor teaches a subject.
+taught_by(Student, Professor) :-
+    student(Student),
+    teaches(Professor, Subject),
+    enrolled_in(Student, Subject).
 
-?- studies(charlie, What).
-?- professor(kirke, Students).
+% Facts about which student is enrolled in which subject
+enrolled_in(john, math).
+enrolled_in(john, chemistry).
+enrolled_in(mary, chemistry).
+enrolled_in(mary, computer_science).
+enrolled_in(alice, data_science).
+
+% Example Queries:
+% ?- taught_by(john, Professor).
+% ?- taught_by(mary, Professor).
+% ?- taught_by(alice, Professor).
